@@ -20,6 +20,8 @@
     <!-- Custom stlylesheet -->
     <%= stylesheet_link_tag "application", :media => "all" %>
 
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -75,8 +77,8 @@
             <ul class="nav-aside-menu">
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">セブラボについて</a></li>
-              <li><a href="#">私たちと一緒に働きませんか？</a></li>
-              <li><a href="#">広告</a></li>
+              <li><a href="#">セブ島ホテル</a></li>
+              <li><a href="#">セブ島ブログ</a></li>
               <li><a href="contact.html">コンタクト</a></li>
             </ul>
           </div>
@@ -84,7 +86,7 @@
 
           <!-- widget posts -->
           <div class="section-row">
-            <h3>Recent Posts</h3>
+            <h3>最新の投稿</h3>
             <div class="post post-widget">
               <a class="post-img" href="blog-post.html"><img src="./images/widget-2.jpg" alt=""></a>
               <div class="post-body">

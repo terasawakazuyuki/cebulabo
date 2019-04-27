@@ -1,18 +1,61 @@
-<p id="notice"><%= notice %></p>
-
-<div class="page-header">
+     <div class="page-header">
         <div class="container">
           <div class="row">
             <div class="col-md-10">
               <ul class="page-header-breadcrumb">
-                <li><a href="/hotels">Home</a></li>
-                <li>ブログ</li>
+                <li><a href="index.html">Home</a></li>
+                <li>セブ島ブログ</li>
               </ul>
-              <h1>ブログ</h1>
+              <h1>セブ島ブログ一覧</h1>
             </div>
           </div>
         </div>
-</div>
+      </div>
+      <!-- /Page Header -->
+
+
+            <% @blogs.each do |blog| %>
+              <div class="col-md-12">
+                <div class="post post-row">
+                  <a href="/blogs/<%= blog.id %>"><%= image_tag 'post-2.jpg',:class =>"post-img"%></a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a class="post-category cat-2" href="#">レストラン</a>
+                      <span class="post-date"><%= blog.created_at %></span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="/blogs/<%= blog.id %>"><%= blog.blog_title %></a>
+                    </h3>
+                    <p><%= blog.blog_text %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+
+              <div class="col-md-12">
+                <div class="section-row">
+                  <button class="primary-button center-block">もっと読む</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col-md-4">
+            <!-- ad -->
+            <div class="aside-widget text-center">
+              <a href="#" style="display: inline-block;margin: auto;">
+                <img class="img-responsive"><%= image_tag 'ad-1.jpg'%>
+              </a>
+            </div>
+            <!-- /ad -->
+
+
+
+
 
 <table>
   <thead>
