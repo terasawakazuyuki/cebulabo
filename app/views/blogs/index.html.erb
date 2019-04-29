@@ -54,34 +54,4 @@
             <!-- /ad -->
 
 
-
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Blog title</th>
-      <th>Blog image</th>
-      <th>Blog text</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.blog_title %></td>
-        <td><%= image_tag blog.blog_image.url %></td>
-        <td><%= blog.blog_image %></td>
-        <td><%= blog.blog_text %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
 <%= link_to 'New Blog', new_blog_path %>
