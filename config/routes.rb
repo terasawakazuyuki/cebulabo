@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :others
+  resources :mactans
+  resources :cities
   resources :blogs
   root to: 'hotels#index'
   resources :hotels, only: :index

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hotel name ja:</strong>
+  <%= @city.hotel_name_ja %>
+</p>
+
+<p>
+  <strong>Hotel name en:</strong>
+  <%= @city.hotel_name_en %>
+</p>
+
+<p>
+  <strong>Hotel lank:</strong>
+  <%= @city.hotel_lank %>
+</p>
+
+<p>
+  <strong>Hotel area:</strong>
+  <%= @city.hotel_area %>
+</p>
+
+<p>
+  <strong>Hotel image:</strong>
+  <%= @city.hotel_image %>
+</p>
+
+<p>
+  <strong>Hotel image text:</strong>
+  <%= @city.hotel_image_text %>
+</p>
+
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_16_012313) do
+ActiveRecord::Schema.define(version: 2019_04_30_055356) do
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "blog_title"
@@ -20,10 +20,43 @@ ActiveRecord::Schema.define(version: 2019_04_16_012313) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "hotel_name_ja"
+    t.string "hotel_name_en"
+    t.integer "hotel_lank"
+    t.string "hotel_area"
+    t.string "hotel_image"
+    t.string "hotel_image_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hotels", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "hotel_name_ja"
     t.string "hotel_name_en"
     t.integer "hotel_rank"
+    t.string "hotel_area"
+    t.string "hotel_image"
+    t.string "hotel_image_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mactans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "hotel_name_ja"
+    t.string "hotel_name_en"
+    t.integer "hotel_lank"
+    t.string "hotel_area"
+    t.string "hotel_image"
+    t.string "hotel_image_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "others", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "hotel_name_ja"
+    t.string "hotel_name_en"
+    t.integer "hotel_lank"
     t.string "hotel_area"
     t.string "hotel_image"
     t.string "hotel_image_text"

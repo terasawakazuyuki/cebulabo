@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hotel_name_ja: MyString
+  hotel_name_en: MyString
+  hotel_lank: 1
+  hotel_area: MyString
+  hotel_image: MyString
+  hotel_image_text: MyString
+
+two:
+  hotel_name_ja: MyString
+  hotel_name_en: MyString
+  hotel_lank: 1
+  hotel_area: MyString
+  hotel_image: MyString
+  hotel_image_text: MyString

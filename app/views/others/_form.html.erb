@@ -1,0 +1,47 @@
+<%= form_with(model: other, local: true) do |form| %>
+  <% if other.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(other.errors.count, "error") %> prohibited this other from being saved:</h2>
+
+      <ul>
+      <% other.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :hotel_name_ja %>
+    <%= form.text_field :hotel_name_ja %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hotel_name_en %>
+    <%= form.text_field :hotel_name_en %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hotel_lank %>
+    <%= form.number_field :hotel_lank %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hotel_area %>
+    <%= form.text_field :hotel_area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hotel_image %>
+    <%= form.text_field :hotel_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hotel_image_text %>
+    <%= form.text_field :hotel_image_text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

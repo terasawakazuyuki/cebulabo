@@ -4,8 +4,9 @@
             <div class="col-md-10">
               <ul class="page-header-breadcrumb">
                 <li><a href="/">Home</a></li>
+                <li>その他エリア</li>
               </ul>
-              <h1>セブ島ホテル研究室（CEBU.LABO）</h1>
+              <h1>その他エリアホテル</h1>
             </div>
           </div>
         </div>
@@ -252,3 +253,24 @@
     <!-- /section -->
 
 
+
+  <tbody>
+    <% @others.each do |other| %>
+      <tr>
+        <td><%= other.hotel_name_ja %></td>
+        <td><%= other.hotel_name_en %></td>
+        <td><%= other.hotel_lank %></td>
+        <td><%= other.hotel_area %></td>
+        <td><%= other.hotel_image %></td>
+        <td><%= other.hotel_image_text %></td>
+        <td><%= link_to 'Show', other %></td>
+        <td><%= link_to 'Edit', edit_other_path(other) %></td>
+        <td><%= link_to 'Destroy', other, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Other', new_other_path %>

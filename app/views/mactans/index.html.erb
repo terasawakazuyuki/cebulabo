@@ -4,8 +4,9 @@
             <div class="col-md-10">
               <ul class="page-header-breadcrumb">
                 <li><a href="/">Home</a></li>
+                <li>マクタン島ホテル</li>
               </ul>
-              <h1>セブ島ホテル研究室（CEBU.LABO）</h1>
+              <h1>マクタン島ホテル</h1>
             </div>
           </div>
         </div>
@@ -252,3 +253,25 @@
     <!-- /section -->
 
 
+
+
+  <tbody>
+    <% @mactans.each do |mactan| %>
+      <tr>
+        <td><%= mactan.hotel_name_ja %></td>
+        <td><%= mactan.hotel_name_en %></td>
+        <td><%= mactan.hotel_lank %></td>
+        <td><%= mactan.hotel_area %></td>
+        <td><%= mactan.hotel_image %></td>
+        <td><%= mactan.hotel_image_text %></td>
+        <td><%= link_to 'Show', mactan %></td>
+        <td><%= link_to 'Edit', edit_mactan_path(mactan) %></td>
+        <td><%= link_to 'Destroy', mactan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mactan', new_mactan_path %>
