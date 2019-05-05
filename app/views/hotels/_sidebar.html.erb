@@ -10,37 +10,18 @@
     <!-- post widget -->
     <div class="aside-widget">
       <div class="section-title">
-        <h2>セブ島ブログ</h2>
+        <h2>セブ島新着ブログ</h2>
       </div>
 
-      <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><%= image_tag 'widget-1.jpg'%></a>
-        <div class="post-body">
-          <h3 class="post-title"><a href="blog-post.html">セブの最新ホテル「デュシタニ」に止まってきました！</a></h3>
+      <% @blogs.each do |blog| %>
+        <div class="post post-widget">
+          <a class="post-img" href="/blogs/<%= blog.id %>"><image src="<%= blog.blog_image %>"></a>
+          <div class="post-body">
+            <h3 class="post-title"><a href="/blogs/<%= blog.id %>"><%= blog.blog_title %></a></h3>
+          </div>
         </div>
-      </div>
+      <% end %>
 
-      <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><%= image_tag 'widget-2.jpg'%></a>
-        <div class="post-body">
-          <h3 class="post-title"><a href="blog-post.html">アヤラモール隣接のマリオットが新しくセダホテルとしてOPEN!</a></h3>
-        </div>
-      </div>
-
-      <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><%= image_tag 'widget-3.jpg'%></a>
-        <div class="post-body">
-          <h3 class="post-title"><a href="blog-post.html">実は家族にもぴったり！ウォーターパーク付きの東横インセブ</a></h3>
-        </div>
-      </div>
-
-      <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><%= image_tag 'widget-4.jpg'%></a>
-        <div class="post-body">
-          <h3 class="post-title"><a href="blog-post.html">セブでプールヴィラといえばやっぱり「プルクラ」しかない！</a></h3>
-        </div>
-      </div>
-    </div>
     <!-- /post widget -->
 
     <!-- catagories -->

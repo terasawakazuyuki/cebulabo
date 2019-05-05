@@ -5,6 +5,7 @@ class MactansController < ApplicationController
   # GET /mactans.json
   def index
     @mactans = Mactan.all
+    @blogs = Blog.all
   end
 
   # GET /mactans/1
