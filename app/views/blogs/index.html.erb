@@ -25,7 +25,7 @@
             <% @blogs.each do |blog| %>
               <div class="col-md-12">
                 <div class="post post-row">
-                  <a href="/blogs/<%= blog.id %>"><%= image_tag 'post-2.jpg',:class =>"post-img"%></a>
+                  <a class="post-img" href="/blogs/<%= blog.id %>"><image src="<%= blog.blog_image %>"></a>
                   <div class="post-body">
                     <div class="post-meta">
                       <a class="post-category cat-2" href="#">レストラン</a>
