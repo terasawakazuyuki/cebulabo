@@ -24,13 +24,13 @@
               <!-- post -->
               <div class="col-md-12">
                 <div class="post post-thumb">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-1.jpg'%></a>
+                  <a class="post-img" href="/cities/1"><%= image_tag 'waterfrontcebucity11.jpg'%></a>
                   <div class="post-body">
                     <div class="post-meta">
-                      <a class="post-category cat-2" href="#">セブ市内ホテル</a>
+                      <a class="post-category cat-2" href="/cities">セブ市内ホテル</a>
                       <span class="post-date">★★★★★</span>
                     </div>
-                    <h3 class="post-title"><a href="blog-post.html">ウォーターフロントセブシティ/Waterfront Cebu City</a></h3>
+                    <h3 class="post-title"><a href="/cities/1">ウォーターフロントセブシティ/Waterfront Cebu City</a></h3>
                   </div>
                 </div>
               </div>
@@ -39,13 +39,13 @@
               <!-- post -->
               <div class="col-md-6">
                 <div class="post">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-4.jpg'%></a>
+                  <a class="post-img" href="blog-post.html"><%= image_tag 'cedahotel11.jpg'%></a>
                   <div class="post-body">
                     <div class="post-meta">
-                      <a class="post-category cat-2" href="#">セブ市内ホテル</a>
+                      <a class="post-category cat-2" href="/cities">セブ市内ホテル</a>
                       <span class="post-date">★★★★★</span>
                     </div>
-                    <h3 class="post-title"><a href="blog-post.html">セダホテル/Ceda Hotel</a></h3>
+                    <h3 class="post-title"><a href="/cities/2">セダホテル/Ceda Hotel</a></h3>
                   </div>
                 </div>
               </div>
@@ -80,68 +80,24 @@
               <!-- ad -->
 
               <!-- post -->
+           <% @cities.each do |city| %>
               <div class="col-md-12">
                 <div class="post post-row">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-2.jpg'%></a>
+                  <a class="post-img" href="/cities/<%= city.id %>"><image src="<%= city.hotel_image %>"></a>
                   <div class="post-body">
                     <div class="post-meta">
-                      <a class="post-category cat-2" href="#">セブ市内ホテル</a>
-                      <span class="post-date">★★☆☆☆</span>
+                      <a class="post-category cat-2" href="#">市内ホテル</a>
+                      <span class="post-date"><%= city.hotel_lank %></span>
                     </div>
-                    <h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+                    <h3 class="post-title">
+                      <a href="/cities/<%= city.id %>"><%= city.hotel_name_ja %></a>
+                    </h3>
+                    <p><%= city.hotel_name_en %></p>
                   </div>
                 </div>
               </div>
-              <!-- /post -->
-
+            <% end %>
               <!-- post -->
-              <div class="col-md-12">
-                <div class="post post-row">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-5.jpg'%></a>
-                  <div class="post-body">
-                    <div class="post-meta">
-                      <a class="post-category cat-2" href="#">JavaScript</a>
-                      <span class="post-date">March 27, 2018</span>
-                    </div>
-                    <h3 class="post-title"><a href="blog-post.html">Microsoft’s TypeScript Fills A Long-standing Void In JavaScript</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                  </div>
-                </div>
-              </div>
-              <!-- /post -->
-
-              <!-- post -->
-              <div class="col-md-12">
-                <div class="post post-row">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-3.jpg'%></a>
-                  <div class="post-body">
-                    <div class="post-meta">
-                      <a class="post-category cat-2" href="#">JavaScript</a>
-                      <span class="post-date">March 27, 2018</span>
-                    </div>
-                    <h3 class="post-title"><a href="blog-post.html">Javascript : Prototype vs Class</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                  </div>
-                </div>
-              </div>
-              <!-- /post -->
-
-              <!-- post -->
-              <div class="col-md-12">
-                <div class="post post-row">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-1.jpg'%></a>
-                  <div class="post-body">
-                    <div class="post-meta">
-                      <a class="post-category cat-2" href="#">JavaScript</a>
-                      <span class="post-date">March 27, 2018</span>
-                    </div>
-                    <h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                  </div>
-                </div>
-              </div>
-              <!-- /post -->
 
               <div class="col-md-12">
                 <div class="section-row">
@@ -151,7 +107,7 @@
             </div>
           </div>
 
-         <%= render partial: "hotels/sidebar" %>
+            <%= render partial: "hotels/sidebar" %>
 
         </div>
         <!-- /row -->
@@ -159,7 +115,6 @@
       <!-- /container -->
     </div>
     <!-- /section -->
-
 
 
   <tbody>

@@ -34,7 +34,7 @@
                     <h3 class="post-title">
                       <a href="/blogs/<%= blog.id %>"><%= blog.blog_title %></a>
                     </h3>
-                    <p><%= blog.blog_text %></p>
+                    <p><%= blog.blog_text.truncate(25).html_safe %></p>
                   </div>
                 </div>
               </div>

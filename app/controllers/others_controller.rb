@@ -5,6 +5,8 @@ class OthersController < ApplicationController
   # GET /others.json
   def index
     @others = Other.all
+    @blogs = Blog.all
+    @cities = City.all
   end
 
   # GET /others/1

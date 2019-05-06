@@ -6,6 +6,7 @@ class MactansController < ApplicationController
   def index
     @mactans = Mactan.all
     @blogs = Blog.all
+    @cities = City.all
   end
 
   # GET /mactans/1

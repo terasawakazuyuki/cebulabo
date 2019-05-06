@@ -36,7 +36,7 @@
                   </figure>
 
                  <h3><%= @blog.blog_title %></h3>
-                  <p><%= @blog.blog_text %></p>
+                  <p><%= @blog.blog_text.html_safe %></p>
 
                   <p><%= link_to '修正', edit_blog_path(@blog) %></p>
                   <p><%= link_to 'ブログ一覧に戻る', blogs_path %></p>
