@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index,except: :index
 
   # GET /blogs
   # GET /blogs.json
@@ -67,6 +68,11 @@ class BlogsController < ApplicationController
     def set_blog
       @blog = Blog.find(params[:id])
     end
+
+    def move_to_index
+      redirect_to action: :index unless user_signed_in?
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
