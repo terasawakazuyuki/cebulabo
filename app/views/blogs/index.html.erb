@@ -60,5 +60,6 @@
       <!-- /container -->
     </div>
     <!-- /section -->
-
+<%= link_to "ログイン", new_user_session_path %>
 <%= link_to 'New Blog', new_blog_path %>
+<%= link_to 'Oign Out', destroy_user_session_path, method: :delete %>

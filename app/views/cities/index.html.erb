@@ -87,7 +87,10 @@
                   <div class="post-body">
                     <div class="post-meta">
                       <a class="post-category cat-2" href="#">市内ホテル</a>
-                      <span class="post-date"><%= city.hotel_lank %></span>
+                      <div class="star-rating">
+                        <div class="star-rating-front" style="width:<%= city.hotel_lank %>%">★★★★★</div>
+                        <div class="star-rating-back">★★★★★</div>
+                      </div>
                     </div>
                     <h3 class="post-title">
                       <a href="/cities/<%= city.id %>"><%= city.hotel_name_ja %></a>
