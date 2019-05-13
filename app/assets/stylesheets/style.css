@@ -977,3 +977,149 @@ RESPONSIVE
          display:none;
     }
 }
+
+
+/*=======================================
+グーグルマップ
+=======================================*/
+
+.tmp-07-B-01 .info-box {
+  width:100%;/*入れ込んだ時に要素がはみ出す場合は width:auto; にする*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+  margin: 30px 0 0 0;
+  background: #fbfaf5;
+  border-radius: 5px 5px 0 0;
+}
+.tmp-07-B-01 .info-box .txt-box:before {
+  content: "information";
+    position: relative;
+    top: -26px;
+  left: -25px;
+    font-size: 26px;
+  color: #928178;
+}
+.tmp-07-B-01 .info-box .txt-box {
+  width: 40%;
+  padding:0 0 0 30px;
+}
+.tmp-07-B-01 .info-box .txt-box h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+}
+.tmp-07-B-01 .info-box .txt-box h5 i {
+  margin: 0 5px 0 0;
+}
+.tmp-07-B-01 .info-box .txt-box p {
+  margin: 0 0 3px 0;
+}
+.tmp-07-B-01 .info-box .txt-box p span {
+  display: inline-block;
+  color: #FFF;
+  font-size: 12px;
+  text-align: center;
+  padding: 1px 0 0 0;
+  background:#333;
+  margin: 0 10px 0 0;
+  width: 105px;
+}
+.tmp-07-B-01 .info-box .map {
+  width: 60%;
+}
+.tmp-07-B-01 .info-box iframe {
+  width: 100%;
+    border: 1px solid #ede4cd;
+    box-sizing: border-box;
+  padding: 3px;
+}
+.tmp-07-B-01 a {
+     color: blue;
+}
+
+.tmp-07-B-01 {
+     margin-bottom: 15px;
+}
+
+
+/*=======================================
+設備.施設のテーブル
+=======================================*/
+.tmp-03-C-02 .table-style-02 {
+     border-collapse: collapse;
+     font-size: 11px;
+     margin-bottom: 15px;
+
+}
+.tmp-03-C-02 .table-style-02 th,
+.tmp-03-C-02 .table-style-02 td {
+     padding: 3px 10px;
+     border: 1px solid #CCC;
+     text-align: center;
+     line-height: normal;
+}
+.tmp-03-C-02 .table-style-02 th {
+     background-color: #EEE;
+     font-weight: normal;
+}
+
+.tmp-03-C-02 h4 {
+     margin-bottom: 2px;
+}
+
+
+
+@media screen and (max-width:480px) {
+    /*　画面サイズが480px以下はここを読み込む　*/
+.tmp-03-C-02 .table-style-02 {
+     width:90%;
+     margin:0 auto;
+}
+}
+
+
+
+
+
+ /*=======================================
+　部屋カテ・レストランのテーブル
+=======================================*/
+.tmp-03-C-03 .table-style-03 {
+     border-collapse: collapse;
+     font-size: 11px;
+     margin-bottom: 15px;
+
+}
+.tmp-03-C-03 .table-style-03 th,
+.tmp-03-C-03 .table-style-03 td {
+     padding: 3px 10px;
+     border: 1px solid #CCC;
+     text-align: center;
+     line-height: normal;
+     font-weight: normal;
+}
+.tmp-03-C-03 .table-style-03 th {
+     background-color: #EEE;
+}
+.tmp-03-C-03 .table-style-03 th.blank{
+     background-color: rgba(255,255,255,0);
+     border-top: none;
+     border-left: none;
+}
+
+.tmp-03-C-03 h4 {
+     margin-bottom: 2px;
+}
+
+@media screen and (max-width:480px) {
+    /*　画面サイズが480px以下はここを読み込む　*/
+.tmp-03-C-03 .table-style-03 {
+     width:90%;
+     margin:0 auto;
+}
+}
+
+

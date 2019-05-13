@@ -29,12 +29,12 @@
                   <div class="post-body">
                     <div class="post-meta">
                       <a class="post-category cat-2" href="#"><%= blog.blog_category %></a>
-                      <span class="post-date"><%= blog.created_at %></span>
+                      <span class="post-date"><%= blog.created_at.strftime('%Y/%m/%d') %></span>
                     </div>
                     <h3 class="post-title">
                       <a href="/blogs/<%= blog.id %>"><%= blog.blog_title %></a>
                     </h3>
-                    <p><%= blog.blog_text.truncate(25).html_safe %></p>
+                    <p><%= blog.blog_text.truncate(100).html_safe %></p>
                   </div>
                 </div>
               </div>
