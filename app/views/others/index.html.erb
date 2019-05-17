@@ -24,7 +24,7 @@
               <!-- post -->
               <div class="col-md-12">
                 <div class="post post-thumb">
-                  <a class="post-img" href="/cities/1"><%= image_tag 'waterfrontcebucity11.jpg'%></a>
+                  <a class="post-img" href="/cities/1"><%= image_tag 'pulchra01.jpg'%></a>
                   <div class="post-body">
                     <div class="post-meta">
                       <a class="post-category cat-2" href="/cities">セブ市内ホテル</a>
@@ -79,20 +79,22 @@
               </div>
               <!-- ad -->
 
-              <!-- post -->
-           <% @cities.each do |city| %>
+           <% @others.each do |other| %>
               <div class="col-md-12">
                 <div class="post post-row">
-                  <a class="post-img" href="/cities/<%= city.id %>"><image src="<%= city.hotel_image %>"></a>
+                  <a class="post-img" href="/others/<%= other.id %>"><image src="<%= other.hotel_image %>"></a>
                   <div class="post-body">
-                    <div class="post-meta">
-                      <a class="post-category cat-2" href="#">市内ホテル</a>
-                      <span class="post-date"><%= city.hotel_lank %></span>
+                    <div class="post-meta star">
+                      <a class="post-category cat-2" href="#">その他エリア</a>
+                      <span class="star-rating">
+                        <span class="star-rating-front" style="width:<%= other.hotel_lank %>%">★★★★★</span>
+                        <span class="star-rating-back">★★★★★</span>
+                      </span>
                     </div>
                     <h3 class="post-title">
-                      <a href="/cities/<%= city.id %>"><%= city.hotel_name_ja %></a>
+                      <a href="/others/<%= other.id %>"><%= other.hotel_name_ja %></a>
                     </h3>
-                    <p><%= city.hotel_name_en %></p>
+                    <p><%= other.hotel_comment %></p>
                   </div>
                 </div>
               </div>

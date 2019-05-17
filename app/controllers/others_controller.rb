@@ -12,6 +12,8 @@ class OthersController < ApplicationController
   # GET /others/1
   # GET /others/1.json
   def show
+    @blogs = Blog.all
+    @others = Other.all
   end
 
   # GET /others/new
