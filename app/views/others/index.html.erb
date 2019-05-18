@@ -1,0 +1,141 @@
+     <div class="page-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10">
+              <ul class="page-header-breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li>その他エリア</li>
+              </ul>
+              <h1>その他エリアホテル</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Header -->
+
+    <!-- section -->
+    <div class="section">
+      <!-- container -->
+      <div class="container">
+        <!-- row -->
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <!-- post -->
+              <div class="col-md-12">
+                <div class="post post-thumb">
+                  <a class="post-img" href="/cities/1"><%= image_tag 'pulchra01.jpg'%></a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a class="post-category cat-2" href="/cities">セブ市内ホテル</a>
+                      <span class="post-date">★★★★★</span>
+                    </div>
+                    <h3 class="post-title"><a href="/cities/1">ウォーターフロントセブシティ/Waterfront Cebu City</a></h3>
+                  </div>
+                </div>
+              </div>
+              <!-- /post -->
+
+              <!-- post -->
+              <div class="col-md-6">
+                <div class="post">
+                  <a class="post-img" href="blog-post.html"><%= image_tag 'cedahotel11.jpg'%></a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a class="post-category cat-2" href="/cities">セブ市内ホテル</a>
+                      <span class="post-date">★★★★★</span>
+                    </div>
+                    <h3 class="post-title"><a href="/cities/2">セダホテル/Ceda Hotel</a></h3>
+                  </div>
+                </div>
+              </div>
+              <!-- /post -->
+
+              <!-- post -->
+              <div class="col-md-6">
+                <div class="post">
+                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-6.jpg'%></a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a class="post-category cat-2" href="#">セブ市内ホテル</a>
+                      <span class="post-date">★★★★★</span>
+                    </div>
+                    <h3 class="post-title"><a href="blog-post.html">マルコポーロ/Maruco polo</a></h3>
+                  </div>
+                </div>
+              </div>
+              <!-- /post -->
+
+              <div class="clearfix visible-md visible-lg"></div>
+
+              <!-- ad -->
+              <div class="col-md-12">
+                <div class="section-row">
+                  <a href="#">
+                    <img class="img-responsive center-block"><%= image_tag 'ad-2.jpg'%>
+
+                  </a>
+                </div>
+              </div>
+              <!-- ad -->
+
+           <% @others.each do |other| %>
+              <div class="col-md-12">
+                <div class="post post-row">
+                  <a class="post-img" href="/others/<%= other.id %>"><image src="<%= other.hotel_image %>"></a>
+                  <div class="post-body">
+                    <div class="post-meta star">
+                      <a class="post-category cat-2" href="#">その他エリア</a>
+                      <span class="star-rating">
+                        <span class="star-rating-front" style="width:<%= other.hotel_lank %>%">★★★★★</span>
+                        <span class="star-rating-back">★★★★★</span>
+                      </span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="/others/<%= other.id %>"><%= other.hotel_name_ja %></a>
+                    </h3>
+                    <p><%= other.hotel_comment %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+              <!-- post -->
+
+              <div class="col-md-12">
+                <div class="section-row">
+                  <button class="primary-button center-block">Load More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <%= render partial: "hotels/sidebar" %>
+
+        </div>
+        <!-- /row -->
+      </div>
+      <!-- /container -->
+    </div>
+    <!-- /section -->
+
+
+  <tbody>
+    <% @others.each do |other| %>
+      <tr>
+        <td><%= other.hotel_name_ja %></td>
+        <td><%= other.hotel_name_en %></td>
+        <td><%= other.hotel_lank %></td>
+        <td><%= other.hotel_area %></td>
+        <td><%= other.hotel_image %></td>
+        <td><%= other.hotel_image_text %></td>
+        <td><%= link_to 'Show', other %></td>
+        <td><%= link_to 'Edit', edit_other_path(other) %></td>
+        <td><%= link_to 'Destroy', other, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Other', new_other_path %>

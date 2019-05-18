@@ -1,0 +1,141 @@
+     <div class="page-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10">
+              <ul class="page-header-breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li>マクタン島ホテル</li>
+              </ul>
+              <h1>マクタン島ホテル</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Header -->
+
+    <!-- section -->
+    <div class="section">
+      <!-- container -->
+      <div class="container">
+        <!-- row -->
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <!-- post -->
+              <div class="col-md-12">
+                <div class="post post-thumb">
+                  <a class="post-img" href="/cities/1"><%= image_tag 'waterfrontcebucity11.jpg'%></a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a class="post-category cat-2" href="/cities">セブ市内ホテル</a>
+                      <span class="post-date">★★★★★</span>
+                    </div>
+                    <h3 class="post-title"><a href="/cities/1">ウォーターフロントセブシティ/Waterfront Cebu City</a></h3>
+                  </div>
+                </div>
+              </div>
+              <!-- /post -->
+
+              <!-- post -->
+              <div class="col-md-6">
+                <div class="post">
+                  <a class="post-img" href="blog-post.html"><%= image_tag 'cedahotel11.jpg'%></a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a class="post-category cat-2" href="/cities">セブ市内ホテル</a>
+                      <span class="post-date">★★★★★</span>
+                    </div>
+                    <h3 class="post-title"><a href="/cities/2">セダホテル/Ceda Hotel</a></h3>
+                  </div>
+                </div>
+              </div>
+              <!-- /post -->
+
+              <!-- post -->
+              <div class="col-md-6">
+                <div class="post">
+                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-6.jpg'%></a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a class="post-category cat-2" href="#">セブ市内ホテル</a>
+                      <span class="post-date">★★★★★</span>
+                    </div>
+                    <h3 class="post-title"><a href="blog-post.html">マルコポーロ/Maruco polo</a></h3>
+                  </div>
+                </div>
+              </div>
+              <!-- /post -->
+
+              <div class="clearfix visible-md visible-lg"></div>
+
+              <!-- ad -->
+              <div class="col-md-12">
+                <div class="section-row">
+                  <a href="#">
+                    <img class="img-responsive center-block"><%= image_tag 'ad-2.jpg'%>
+
+                  </a>
+                </div>
+              </div>
+              <!-- ad -->
+
+              <!-- post -->
+           <% @cities.each do |city| %>
+              <div class="col-md-12">
+                <div class="post post-row">
+                  <a class="post-img" href="/cities/<%= city.id %>"><image src="<%= city.hotel_image %>"></a>
+                  <div class="post-body">
+                    <div class="post-meta">
+                      <a class="post-category cat-2" href="#">市内ホテル</a>
+                      <span class="post-date"><%= city.hotel_lank %></span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="/cities/<%= city.id %>"><%= city.hotel_name_ja %></a>
+                    </h3>
+                    <p><%= city.hotel_name_en %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+              <!-- post -->
+
+              <div class="col-md-12">
+                <div class="section-row">
+                  <button class="primary-button center-block">Load More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <%= render partial: "hotels/sidebar" %>
+
+        </div>
+        <!-- /row -->
+      </div>
+      <!-- /container -->
+    </div>
+    <!-- /section -->
+
+
+
+
+  <tbody>
+    <% @mactans.each do |mactan| %>
+      <tr>
+        <td><%= mactan.hotel_name_ja %></td>
+        <td><%= mactan.hotel_name_en %></td>
+        <td><%= mactan.hotel_lank %></td>
+        <td><%= mactan.hotel_area %></td>
+        <td><%= mactan.hotel_image %></td>
+        <td><%= mactan.hotel_image_text %></td>
+        <td><%= link_to 'Show', mactan %></td>
+        <td><%= link_to 'Edit', edit_mactan_path(mactan) %></td>
+        <td><%= link_to 'Destroy', mactan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mactan', new_mactan_path %>

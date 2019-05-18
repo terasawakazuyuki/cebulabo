@@ -3,10 +3,9 @@
           <div class="row">
             <div class="col-md-10">
               <ul class="page-header-breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>セブ市内ホテル</li>
+                <li><a href="/">Home</a></li>
               </ul>
-              <h1>セブ市内ホテル</h1>
+              <h1>セブ島ホテル研究室（CEBU.LABO）</h1>
             </div>
           </div>
         </div>
@@ -24,13 +23,13 @@
               <!-- post -->
               <div class="col-md-12">
                 <div class="post post-thumb">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-1.jpg'%></a>
+                  <a class="post-img" href="/cities/1"><%= image_tag 'waterfrontcebucity11.jpg'%></a>
                   <div class="post-body">
                     <div class="post-meta">
-                      <a class="post-category cat-2" href="#">セブ市内ホテル</a>
+                      <a class="post-category cat-2" href="/cities">セブ市内ホテル</a>
                       <span class="post-date">★★★★★</span>
                     </div>
-                    <h3 class="post-title"><a href="blog-post.html">ウォーターフロントセブシティ/Waterfront Cebu City</a></h3>
+                    <h3 class="post-title"><a href="/cities/1">ウォーターフロントセブシティ/Waterfront Cebu City</a></h3>
                   </div>
                 </div>
               </div>
@@ -39,13 +38,13 @@
               <!-- post -->
               <div class="col-md-6">
                 <div class="post">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-4.jpg'%></a>
+                  <a class="post-img" href="blog-post.html"><%= image_tag 'cedahotel11.jpg'%></a>
                   <div class="post-body">
                     <div class="post-meta">
-                      <a class="post-category cat-2" href="#">セブ市内ホテル</a>
+                      <a class="post-category cat-2" href="/cities">セブ市内ホテル</a>
                       <span class="post-date">★★★★★</span>
                     </div>
-                    <h3 class="post-title"><a href="blog-post.html">セダホテル/Ceda Hotel</a></h3>
+                    <h3 class="post-title"><a href="/cities/2">セダホテル/Ceda Hotel</a></h3>
                   </div>
                 </div>
               </div>
@@ -80,68 +79,24 @@
               <!-- ad -->
 
               <!-- post -->
+           <% @cities.each do |city| %>
               <div class="col-md-12">
                 <div class="post post-row">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-2.jpg'%></a>
+                  <a class="post-img" href="/cities/<%= city.id %>"><image src="<%= city.hotel_image %>"></a>
                   <div class="post-body">
                     <div class="post-meta">
-                      <a class="post-category cat-2" href="#">セブ市内ホテル</a>
-                      <span class="post-date">★★☆☆☆</span>
+                      <a class="post-category cat-2" href="#">市内ホテル</a>
+                      <span class="post-date"><%= city.hotel_lank %></span>
                     </div>
-                    <h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+                    <h3 class="post-title">
+                      <a href="/cities/<%= city.id %>"><%= city.hotel_name_ja %></a>
+                    </h3>
+                    <p><%= city.hotel_name_en %></p>
                   </div>
                 </div>
               </div>
-              <!-- /post -->
-
+            <% end %>
               <!-- post -->
-              <div class="col-md-12">
-                <div class="post post-row">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-5.jpg'%></a>
-                  <div class="post-body">
-                    <div class="post-meta">
-                      <a class="post-category cat-2" href="#">JavaScript</a>
-                      <span class="post-date">March 27, 2018</span>
-                    </div>
-                    <h3 class="post-title"><a href="blog-post.html">Microsoft’s TypeScript Fills A Long-standing Void In JavaScript</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                  </div>
-                </div>
-              </div>
-              <!-- /post -->
-
-              <!-- post -->
-              <div class="col-md-12">
-                <div class="post post-row">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-3.jpg'%></a>
-                  <div class="post-body">
-                    <div class="post-meta">
-                      <a class="post-category cat-2" href="#">JavaScript</a>
-                      <span class="post-date">March 27, 2018</span>
-                    </div>
-                    <h3 class="post-title"><a href="blog-post.html">Javascript : Prototype vs Class</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                  </div>
-                </div>
-              </div>
-              <!-- /post -->
-
-              <!-- post -->
-              <div class="col-md-12">
-                <div class="post post-row">
-                  <a class="post-img" href="blog-post.html"><%= image_tag 'post-1.jpg'%></a>
-                  <div class="post-body">
-                    <div class="post-meta">
-                      <a class="post-category cat-2" href="#">JavaScript</a>
-                      <span class="post-date">March 27, 2018</span>
-                    </div>
-                    <h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                  </div>
-                </div>
-              </div>
-              <!-- /post -->
 
               <div class="col-md-12">
                 <div class="section-row">
@@ -151,105 +106,11 @@
             </div>
           </div>
 
-          <div class="col-md-4">
-            <!-- ad -->
-            <div class="aside-widget text-center">
-              <a href="#" style="display: inline-block;margin: auto;">
-                <img class="img-responsive"><%= image_tag 'ad-1.jpg'%>
-              </a>
-            </div>
-            <!-- /ad -->
+            <%= render partial: "hotels/sidebar" %>
 
-            <!-- post widget -->
-            <div class="aside-widget">
-              <div class="section-title">
-                <h2>セブ島ブログ</h2>
-              </div>
-
-              <div class="post post-widget">
-                <a class="post-img" href="blog-post.html"><%= image_tag 'widget-1.jpg'%></a>
-                <div class="post-body">
-                  <h3 class="post-title"><a href="blog-post.html">セブの最新ホテル「デュシタニ」に止まってきました！</a></h3>
-                </div>
-              </div>
-
-              <div class="post post-widget">
-                <a class="post-img" href="blog-post.html"><%= image_tag 'widget-2.jpg'%></a>
-                <div class="post-body">
-                  <h3 class="post-title"><a href="blog-post.html">アヤラモール隣接のマリオットが新しくセダホテルとしてOPEN!</a></h3>
-                </div>
-              </div>
-
-              <div class="post post-widget">
-                <a class="post-img" href="blog-post.html"><%= image_tag 'widget-3.jpg'%></a>
-                <div class="post-body">
-                  <h3 class="post-title"><a href="blog-post.html">実は家族にもぴったり！ウォーターパーク付きの東横インセブ</a></h3>
-                </div>
-              </div>
-
-              <div class="post post-widget">
-                <a class="post-img" href="blog-post.html"><%= image_tag 'widget-4.jpg'%></a>
-                <div class="post-body">
-                  <h3 class="post-title"><a href="blog-post.html">セブでプールヴィラといえばやっぱり「プルクラ」しかない！</a></h3>
-                </div>
-              </div>
-            </div>
-            <!-- /post widget -->
-
-            <!-- catagories -->
-            <div class="aside-widget">
-              <div class="section-title">
-                <h2>カテゴリー</h2>
-              </div>
-              <div class="category-widget">
-                <ul>
-                  <li><a href="#" class="cat-1">セブ市内ホテル<span>340</span></a></li>
-                  <li><a href="#" class="cat-2">マクタン島ホテル<span>74</span></a></li>
-                  <li><a href="#" class="cat-4">セブその他エリアホテル<span>41</span></a></li>
-                  <li><a href="#" class="cat-3">航空券<span>35</span></a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- /catagories -->
-
-            <!-- tags -->
-            <div class="aside-widget">
-              <div class="tags-widget">
-                <ul>
-                  <li><a href="#">高級ホテル</a></li>
-                  <li><a href="#">オンザビーチ</a></li>
-                  <li><a href="#">ショッピングに便利</a></li>
-                  <li><a href="#">プールヴィラ付き</a></li>
-                  <li><a href="#">レストラン</a></li>
-                  <li><a href="#">人気スパ</a></li>
-                  <li><a href="#">価格重視</a></li>
-                  <li><a href="#">ファミリー</a></li>
-                  <li><a href="#">ビーチが綺麗</a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- /tags -->
-
-            <!-- archive -->
-            <div class="aside-widget">
-              <div class="section-title">
-                <h2>ブログ書庫</h2>
-              </div>
-              <div class="archive-widget">
-                <ul>
-                  <li><a href="#">Jan 2018</a></li>
-                  <li><a href="#">Feb 2018</a></li>
-                  <li><a href="#">Mar 2018</a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- /archive -->
-          </div>
         </div>
         <!-- /row -->
       </div>
       <!-- /container -->
     </div>
     <!-- /section -->
-
-

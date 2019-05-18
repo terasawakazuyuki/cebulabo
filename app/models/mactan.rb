@@ -1,0 +1,2 @@
+class Mactan < ApplicationRecord
+end

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- スマホ対応VIEWポイントの設定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tag %>
      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>CEBU LABO</title>
@@ -12,15 +14,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="cebulabo/app/assets/stylesheets/bootstrap.min.css"/>
+   <!--  <link type="text/css" rel="stylesheet" href="cebulabo/app/assets/stylesheets/bootstrap.min.css"> -->
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="cebulabo/app/assets/stylesheets/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="cebulabo/app/assets/stylesheets/font-awesome.min.css"> -->
 
     <!-- Custom stlylesheet -->
     <%= stylesheet_link_tag "application", :media => "all" %>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,10 +50,10 @@
             <!-- nav -->
             <ul class="nav-menu nav navbar-nav">
               <li><a href="/">ホーム</a></li>
-              <li><a href="category.html">セブ市内ホテル</a></li>
-              <li class="cat-1"><a href="category.html">マクタン島ホテル</a></li>
-              <li class="cat-2"><a href="category.html">セブその他エリアホテル</a></li>
-              <li class="cat-3"><a href="category.html">航空券</a></li>
+              <li><a href="/cities">航空券</a></li>
+              <li class="cat-1"><a href="/mactans">マクタン島ホテル</a></li>
+              <li class="cat-2"><a href="/cities">セブ市内ホテル</a></li>
+              <li class="cat-3"><a href="/others">その他エリアホテル</a></li>
               <li class="cat-4"><a href="/blogs">ブログ</a></li>
             </ul>
             <!-- /nav -->
@@ -88,25 +90,19 @@
           <div class="section-row">
             <h3>最新の投稿</h3>
             <div class="post post-widget">
-              <a class="post-img" href="blog-post.html"><img src="./images/widget-2.jpg" alt=""></a>
+              <a class="post-img" href="blog-post.html"><%= image_tag 'post-1.jpg'%></a>
               <div class="post-body">
-                <h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
+                <h3 class="post-title"><a href="blog-post.html">あああああああああ</a></h3>
               </div>
             </div>
 
             <div class="post post-widget">
-              <a class="post-img" href="blog-post.html"><img src="./images/widget-3.jpg" alt=""></a>
+              <a class="post-img" href="blog-post.html"><%= image_tag 'post-1.jpg'%></a>
               <div class="post-body">
-                <h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
+                <h3 class="post-title"><a href="blog-post.html">いいいいいいいい</a></h3>
               </div>
             </div>
 
-            <div class="post post-widget">
-              <a class="post-img" href="blog-post.html"><img src="./img/widget-4.jpg" alt=""></a>
-              <div class="post-body">
-                <h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-              </div>
-            </div>
           </div>
           <!-- /widget posts -->
 
@@ -151,7 +147,7 @@
           <div class="col-md-5">
             <div class="footer-widget">
               <div class="footer-logo">
-                <a href="index.html" class="logo"><img src="./img/logo.png" alt=""></a>
+                <a href="index.html" class="logo"><%= image_tag 'logo.png'%></a>
               </div>
               <ul class="footer-nav">
                 <li><a href="#">プライバシーポリシー</a></li>
@@ -217,9 +213,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- /Footer -->
 
     <!-- jQuery Plugins -->
-    <script src="js/jquery.min.js"></script>
+<!--     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> -->
 
 
 

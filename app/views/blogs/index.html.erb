@@ -3,7 +3,7 @@
           <div class="row">
             <div class="col-md-10">
               <ul class="page-header-breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>セブ島ブログ</li>
               </ul>
               <h1>セブ島ブログ一覧</h1>
@@ -12,21 +12,29 @@
         </div>
       </div>
       <!-- /Page Header -->
+          <!-- section -->
+    <div class="section">
+      <!-- container -->
+      <div class="container">
+        <!-- row -->
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
 
 
             <% @blogs.each do |blog| %>
               <div class="col-md-12">
                 <div class="post post-row">
-                  <a href="/blogs/<%= blog.id %>"><%= image_tag 'post-2.jpg',:class =>"post-img"%></a>
+                  <a class="post-img" href="/blogs/<%= blog.id %>"><image src="<%= blog.blog_image %>"></a>
                   <div class="post-body">
                     <div class="post-meta">
-                      <a class="post-category cat-2" href="#">レストラン</a>
-                      <span class="post-date"><%= blog.created_at %></span>
+                      <a class="post-category cat-2" href="#"><%= blog.blog_category %></a>
+                      <span class="post-date"><%= blog.created_at.strftime('%Y/%m/%d') %></span>
                     </div>
                     <h3 class="post-title">
                       <a href="/blogs/<%= blog.id %>"><%= blog.blog_title %></a>
                     </h3>
-                    <p><%= blog.blog_text %></p>
+                    <p><%= blog.blog_text.truncate(100).html_safe %></p>
                   </div>
                 </div>
               </div>
@@ -35,7 +43,8 @@
 
               <div class="col-md-12">
                 <div class="section-row">
-                  <button class="primary-button center-block">もっと読む</button>
+                   <%= paginate(@blogs) %>
+ <!--                  <button class="primary-button center-block">もっと読む</button> -->
                 </div>
               </div>
             </div>
@@ -43,15 +52,14 @@
 
 
 
+          <%= render partial: "hotels/sidebar" %>
 
-          <div class="col-md-4">
-            <!-- ad -->
-            <div class="aside-widget text-center">
-              <a href="#" style="display: inline-block;margin: auto;">
-                <img class="img-responsive"><%= image_tag 'ad-1.jpg'%>
-              </a>
-            </div>
-            <!-- /ad -->
-
-
+        </div>
+        <!-- /row -->
+      </div>
+      <!-- /container -->
+    </div>
+    <!-- /section -->
+<%= link_to "ログイン", new_user_session_path %>
 <%= link_to 'New Blog', new_blog_path %>
+<%= link_to 'Oign Out', destroy_user_session_path, method: :delete %>

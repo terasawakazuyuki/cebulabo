@@ -1,15 +1,17 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  # before_action :move_to_index, only: [:create, :update, :destroy]
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order("created_at DESC").page(params[:page]).per(5)
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @blogs = Blog.all
   end
 
   # GET /blogs/new
@@ -67,8 +69,13 @@ class BlogsController < ApplicationController
       @blog = Blog.find(params[:id])
     end
 
+    # def move_to_index
+    #   redirect_to action: :index unless user_signed_in?
+    # end
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:blog_title, :blog_image, :blog_text)
+      params.require(:blog).permit(:blog_title, :blog_image, :blog_text, :blog_category)
     end
 end
